@@ -1,9 +1,10 @@
+//We are useing sendGrid in order to send emails from the application
 const sgMail = require('@sendgrid/mail')
-
-const sendgridAPIKey = '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'
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
+
+//a method to send a welcome email to a new user
 const sendWelcomeEmail = (email, name) =>
 {
     sgMail.send({
@@ -14,6 +15,7 @@ const sendWelcomeEmail = (email, name) =>
     })
 }
 
+//a method to send a goodbye email to a user deleting there profile
 const sendGoodbyeEmail = (email, name) =>
 {
     sgMail.send({
@@ -24,6 +26,7 @@ const sendGoodbyeEmail = (email, name) =>
     })
 }
 
+//exporting the emailing functions
 module.exports =
 {
     sendWelcomeEmail,

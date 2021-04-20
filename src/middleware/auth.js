@@ -18,7 +18,7 @@ const auth = async (req,res,next) =>
         {
             throw new Error()
         }
-        //we return the token and the user that had that token so we can have easier access to that user information 
+        //we return the token and the user that had that token so we can have easier access to that user information
         req.token = token
         req.payload = user
         next()
